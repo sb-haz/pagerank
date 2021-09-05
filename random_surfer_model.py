@@ -31,7 +31,7 @@ def randomwalk(edges, a, iters):
             current_node = random.choice(potential_nodes)
             
         # Else teleport to random page
-        else:z
+        else:
             # Pick a random node
             current_node = random.sample(nodes, 1)[0]
 
