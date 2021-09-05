@@ -13,19 +13,23 @@ def pagerank(edges, a, iters):
     for node in nodes:
         connecting_edges = []
         for edge in edges:
+
             # Find all nodes in given edges set
             if (node == edge[0]):
+
                 # Add (the connecting edges) to a list
                 connecting_edges.append(edge[1])
 
         l = []
         # Iterate through nodes again, to build row of jump probabilities (in list l)
         for n in nodes:
+
             # Connecting nodes have probability of '1 -  a'
             # If 'a' was 10%, they'll have 90% probability combined
             if n in connecting_edges:
                 x = (1 - a) / len(connecting_edges)
                 l.append(x)
+                
             # Non-connecting nodes have probability of 'a' to add random teleportation
             # Both connecting and non-connecting together will have a probability of 1
             else:
